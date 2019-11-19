@@ -4,3 +4,4 @@
 4. pip install flask-wtf
 5. pip install python-dotenv
 6. pip freeze > requirements.txt
+7. pip install flask-mongoengine

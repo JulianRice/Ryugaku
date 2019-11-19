@@ -4,25 +4,32 @@
 		<!-- Required meta tags -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		
 	   	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		
 		<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-		
 		<link href="https://fonts.googleapis.com/css?family=Pontano+Sans:300,400|M+PLUS+Rounded+1c:300,400&display=swap&subset=japanese" rel="stylesheet">
 		
 		<title>Ryugaku</title>
 	</head>
-	<body style="padding: 40px 80px 0px 80px;">
+	<body style="padding: 40px 80px 0px 80px;" class="{% if session['username'] %}logged-in{% else %}not-logged-in{% endif %}">
 		{% include "includes/nav.html" %}
 		<div class="jumbotron parallax white tinted">
 			<div class="untinted" lang="{% if index %}en{% else %}ja{% endif %}">
 				<h1>{% if index %}Ryugaku{% endif %}</h1>
 				<h1>{% if login %}ログイン{% endif %}</h1>
 				<h1>{% if register %}新規登録{% endif %}</h1>
+				<h1>{% if users %}マイプロフィール{% endif %}</h1>
 				<h3>Learn from other's experiences abroad.</h3>
-				<h3>Then make them your own.</h3>
+				<h3>Then create your own<span lang="ja">{% if session['username'] %}, {{ session['fullname'] }}{% else %}.{% endif %}</span></h3>
 			</div>
+			{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+					{% for category, message in messages %}
+						<div class="alert alert-{{category}}">
+							<p>{{message}}</p>
+						</div>
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
 		</div>
         
         {% block content %}

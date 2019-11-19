@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row" lang="ja">
+        <div class="col-md-8 offset-md-2">
+            <h3>ユーザー</h3>
+            {% if login %}
+                <h3>Welcome back</h3>
+            {% else %}
+                <p>Already registered? Login <a href="{{ url_for('login') }}">here</a></p>
+            {% endif %}
+            
+            {% for user in users %}
+            <dl>
+                <dt>{{ user.username }}</dt>
+                <dd>名前（日本語）: {{ user.lnameJp }} {{ user.fnameJp }}</dd>
+                <dd>名前（英語）: {{ user.fnameEn }} {{ user.lnameEn }}</dd>
+                <dd>大学：{{ user.university }} </dd>
+            </dl>
+            {% else %}
+                <h3>No users yet</h3>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

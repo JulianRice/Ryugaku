@@ -1,17 +1,27 @@
 		<header>
 			<div style="float: left;">
 				<!-- <p>リュウガク</p> -->
-				<img class ="logo" src="{{ url_for('static', filename='images/Ryugaku.png') }}">
+				<a href="{{ url_for('index') }}"><img class ="logo" src="{{ url_for('static', filename='images/Ryugaku.png') }}"></a>
 			</div>
 			<div lang="ja">
 				<nav>
 					<ul class="nav justify-content-end nav-pills">
+					{% if not session['username'] %}
 					  <li class="nav-item">
 						<a class="nav-link {% if login %}active{% endif %}" href="{{ url_for('login') }}">ログイン</a>
 					  </li>
 					  <li class="nav-item">
-						<a class="nav-link {% if not register %}{% else %}active{% endif %}" href="{{ url_for('register') }}">新規登録</a>
+						<a class="nav-link {% if register %}active{% endif %}" href="{{ url_for('register') }}">新規登録</a>
 					  </li>
+					{% else %}
+					  <li class="nav-item">
+						<a class="nav-link {% if account %}active{% endif %}" href="{{ url_for('profile') }}">アカウント</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link {% if logout %}active{% endif %}" href="{{ url_for('logout') }}">ログアウト</a>
+					  </li>
+					{% endif %}
+					  
 					</ul>
 				</nav>
 				<nav>

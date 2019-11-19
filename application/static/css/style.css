@@ -2,13 +2,17 @@ div:lang(en) {
 	font-family: 'Pontano Sans', sans-serif;
 	font-weight: 300;
 }
-div:lang(ja), .dropdown-item {
+div:lang(ja), .dropdown-item, span:lang(ja) {
 	font-family: 'M PLUS Rounded 1c', sans-serif;
 	font-weight: 300;
 }
-body {
+.not-logged-in {
 	background-color: rgb(233, 233, 255);
 }
+.logged-in {
+	background-color: rgb(255, 233, 232);
+}
+
 .parallax {
   /* The image used */
   /* background-image: url("{{ url_for('static', filename='../images/LosCover.jpg') }}"); */
@@ -66,4 +70,22 @@ html {
 .logo {
 	max-height: 55px;
 	float: left;
+}
+
+.new-form input {
+	color: grey;
+	padding: 10px;
+	border-radius: 10px;
+	border: 0px;
+	text-align: center;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+.center-text {
+	text-align: center;
 }
