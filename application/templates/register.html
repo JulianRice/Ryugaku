@@ -1,0 +1,94 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-8 offset-md-2" lang="ja">
+            <h3>新規登録：投稿者</h3>
+            <form name="register" action="" method="post" novalidate>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="ln">苗字（漢字）</label>
+                        <input type="text" class="form-control" placeholder="宮沢" id="ln">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="fn">名前（漢字）</label>
+                        <input type="text" class="form-control" placeholder="万里" id="fn">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="ln-e">苗字（英語）</label>
+                        <input type="text" class="form-control" placeholder="Miyazawa" id="ln-e">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="fn-e">名前（英語）</label>
+                        <input type="text" class="form-control" placeholder="Banri" id="fn-e">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="username">ユーザーネーム</label>
+                        <input type="username" class="form-control" placeholder="banri634" id="username">
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="email">大学のEメール</label>
+                        <input type="email" class="form-control" placeholder="goombajmr@g.ucla.edu" id="email" aria-describedby="email_help">
+                        <small id="email_help" class="form-text text-muted">
+                            大学のEメールしか使えないです。
+                        </small>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-8">
+                        <label for="status">Status</label>
+                        <select class="form-control" id="status" name="stat">
+                            <option selected value="daigaku">大学生</option>
+                            <option value="komikare">コミカレ生</option>
+                            <option value="gogaku">語学学生</option>
+                            <option value="shakaijin">社会人</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="field">Field Type</label>
+                        <select class="form-control" id="field">
+                            <option selected>文系</option>
+                            <option>理系</option>
+                            <option>文系と理系</option>
+                            <option>他</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div class="form-group daigaku_form">
+                        <label for="university_d">大学</label>
+                        <select class="form-control" id="university_d">
+                            <option selected>UCLA</option>
+                            <option>UC Berkeley</option>
+                            <option>UCI</option>
+                        </select>
+                    </div>
+                    <div class="form-group komikare_form">
+                        <label for="university_c">コミカレ</label>
+                        <select class="form-control" id="university_c">
+                            <option>Santa Monica College</option>
+                        </select>
+                    </div>
+                    <div class="form-group gogaku_form">
+                        <label for="university_g">語学学校</label>
+                        <select class="form-control" id="university_g">
+                            <option selected>Super English!</option>
+                        </select>
+                    </div>
+                    <div class="form-group alumni_form">
+                        <label for="university_a">大学・コミカレ</label>
+                        <select class="form-control" id="university_a">
+                            <option selected>UCLA</option>
+                            <option>UCI</option>
+                            <option>Santa Monica College</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+{% endblock %}

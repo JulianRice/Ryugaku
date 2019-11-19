@@ -1,0 +1,39 @@
+		<header>
+			<div style="float: left;">
+				<!-- <p>リュウガク</p> -->
+				<img class ="logo" src="{{ url_for('static', filename='images/Ryugaku.png') }}">
+			</div>
+			<div lang="ja">
+				<nav>
+					<ul class="nav justify-content-end nav-pills">
+					  <li class="nav-item">
+						<a class="nav-link {% if login %}active{% endif %}" href="{{ url_for('login') }}">ログイン</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link {% if not register %}{% else %}active{% endif %}" href="{{ url_for('register') }}">新規登録</a>
+					  </li>
+					</ul>
+				</nav>
+				<nav>
+					<ul class="nav nav-tabs">
+					  <li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">就職就活</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">履歴書</a>
+							<a class="dropdown-item" href="#">面接アドバイス</a>
+							<a class="dropdown-item" href="#">海外でのインターンシップ</a>
+							<a class="dropdown-item" href="#">キャリアフォーラム</a>
+						</div>
+					  </li>
+					  <li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">日常生活</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="#">英語学習</a>
+							<a class="dropdown-item" href="#">寮生活</a>
+							<a class="dropdown-item" href="#">パーティー</a>
+						</div>
+					  </li>
+					</ul>
+				</nav>
+			</div>
+		</header>

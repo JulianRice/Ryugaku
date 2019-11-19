@@ -1,0 +1,69 @@
+div:lang(en) {
+	font-family: 'Pontano Sans', sans-serif;
+	font-weight: 300;
+}
+div:lang(ja), .dropdown-item {
+	font-family: 'M PLUS Rounded 1c', sans-serif;
+	font-weight: 300;
+}
+body {
+	background-color: rgb(233, 233, 255);
+}
+.parallax {
+  /* The image used */
+  /* background-image: url("{{ url_for('static', filename='../images/LosCover.jpg') }}"); */
+  background-color: white;
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.white {
+	color: rgb(45, 45, 180);
+}
+.tinted {
+	opacity: 0.8;
+}
+.untinted {
+	opacity: 1;
+}
+.bottom-container {
+	padding-top: 10px;
+}
+
+.card-shukatsu {
+	background-color: darkblue;
+	color: white;
+}
+
+.card-nichijou {
+	background-color: darkgreen;
+	color: white;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.lower-nav {
+	font-size: 16px;
+}
+/*
+.card {
+	height: 360px;
+}
+*/
+/*style="background: url('LosCover.jpg') no-repeat center center fixed; background-size: cover;*/
+
+.alumni_form, .gogaku_form, .komikare_form {
+	display: none;
+}
+
+.logo {
+	max-height: 55px;
+	float: left;
+}
