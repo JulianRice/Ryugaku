@@ -11,15 +11,23 @@
 		<title>Ryugaku</title>
 	</head>
 	<body style="padding: 40px 80px 0px 80px;" class="{% if session['username'] %}logged-in{% else %}not-logged-in{% endif %}">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		
 		{% include "includes/nav.html" %}
-		<div class="jumbotron parallax white tinted">
+		
+		<div class="jumbotron-fluid parallax white tinted banner">
 			<div class="untinted" lang="{% if index %}en{% else %}ja{% endif %}">
 				<h1>{% if index %}Ryugaku{% endif %}</h1>
 				<h1>{% if login %}ログイン{% endif %}</h1>
 				<h1>{% if register %}新規登録{% endif %}</h1>
 				<h1>{% if users %}マイプロフィール{% endif %}</h1>
-				<h3>Learn from other's experiences abroad.</h3>
-				<h3>Then create your own<span lang="ja">{% if session['username'] %}, {{ session['fullname'] }}{% else %}.{% endif %}</span></h3>
+				<h1>{% if profile %}アカウント{% endif %}</h1>
+				{% if index %}
+					<h3>Learn from other's experiences abroad.</h3>
+					<p>Then create your own<span lang="ja">{% if session['username'] %}, {{ session['fullname'] }}{% else %}.{% endif %}</span></p>
+				{% endif %}
 			</div>
 			{% with messages = get_flashed_messages(with_categories=true) %}
 				{% if messages %}
@@ -37,9 +45,6 @@
 		
 		{% include "includes/footer.html" %}
 
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 		<script type="text/javascript">
             $(document).ready(function() { 
                 $(".dropdown, .btn-group").hover(function() { 

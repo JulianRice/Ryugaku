@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+{% block content %}
+		
+		{% if session['username'] %}
+		<div class="row" lang="ja">
+			<div class="col-md-7 profile-left-box">
+				<h4 class="text-center">作成したオモイデ</h4>
+				<div style="width: 70%" class="center">
+					<div class="card card-shukatsu h-100">
+						<div class="card-body">
+							<h5 class="card-title">留学生へのベスト5面接チップ</h5>
+							<p>ベスト５！</p>
+							<!-- Border between content of the card and the logistics (username / continue reading) -->
+							<br>
+							<p class="card-text">banri634</p>
+							<a href="#" class="btn btn-yomu">つづく</a>
+						</div>
+					</div>
+				</div>
+				<div class="spacing"></div>
+				<div style="width: 70%" class="center">
+					<div class="card card-nichijou h-100">
+						<div class="card-body">
+							<h5 class="card-title">週6回のジム生活？！</h5>
+							<p>---</p>
+							<!-- Border between content of the card and the logistics (username / continue reading) -->
+							<br>
+							<p class="card-text">banri634</p>
+							<a href="#" class="btn btn-yomu">つづく</a>
+						</div>
+					</div>
+				</div>
+				<div class="spacing"></div>
+				<div style="width: 70%" class="center">
+					<div class="card card-shukatsu h-100">
+						<div class="card-body">
+							<h5 class="card-title">三菱電機の面接感想</h5>
+							<p>---</p>
+							<!-- Border between content of the card and the logistics (username / continue reading) -->
+							<br>
+							<p class="card-text">banri634</p>
+							<a href="#" class="btn btn-yomu">つづく</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-5 profile-right-box">
+				<div class="profile-picture center">
+					
+				</div>
+				<h4 class="text-center">{{ user.lnameJp }} {{ user.fnameJp }}</h4>
+				<h4 class="text-center">{{ user.fnameEn }} {{ user.lnameEn }}</h4>
+				<p class="text-center">{{ user.statusNow }} <br>
+									   {{ user.majorType }} @ {{ user.university }}</p>
+			</div>
+		</div>
+
+		<script>
+			$(function() {
+				$('#fileupload').fileupload({
+					url: 'upload',
+					dataType: 'json',
+					add: function(e, data) {
+						data.submit();
+					},
+					success: function(response, status) {
+						console.log(response);
+					},
+					error: function(error) {
+						console.log(error);
+					}
+				});
+			})
+		</script>
+		{% endif %}
+
+{% endblock %}
