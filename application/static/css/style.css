@@ -111,6 +111,13 @@ html {
 	height: 500px;
 }
 
+.card-title {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+	overflow: hidden;
+}
+
 .profile-left-box {
 	background-color: white;
 	padding: 20px;
